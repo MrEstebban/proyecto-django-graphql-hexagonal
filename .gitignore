@@ -1,0 +1,77 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribuciones
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+pip-wheel-metadata/
+
+# Archivos creados por el entorno virtual
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de configuración de la base de datos (SQLite)
+*.sqlite3
+
+# Archivos creados por el IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~
+
+# Variables de entorno y claves secretas
+.env
+
+# Archivos de la cache de Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Carpetas de archivos estáticos y de medios
+static/
+media/
+
+# Archivos de migraciones de Django
+*/migrations/__pycache__/
+*/migrations/*.py[cod]
+*/migrations/*.py[cod].bak
+*/migrations/*.py[cod].tmp
+*/migrations/*.py[cod].swp
+
+# Archivos de sincronización de Cassandra
+*/sync_cassandra/
+
+# Carpetas de archivos compilados
+*.compiled

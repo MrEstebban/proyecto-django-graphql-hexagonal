@@ -1,0 +1,14 @@
+# Django framework
+django
+
+# Integración GraphQL con Django
+graphene-django
+
+#cython
+# Driver para conectar Python con Cassandra
+#cassandra-driver
+
+#django-cassandra-engine
+
+# Manejo de variables de entorno en Django
+#python-decouple==3.8
