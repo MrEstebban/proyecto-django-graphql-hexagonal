@@ -87,15 +87,21 @@ Puedes acceder al playground de GraphQL en `http://127.0.0.1:8000/graphql`. Desd
 
 ### Consultas Ejemplo
 
-#### Obtener todos los estudiantes:
+#### Obtener todos los estudiantes y notas:
 
 ```graphql
-query {
-  students {
+query{
+  allStudents {
     id
     firstName
     lastName
     email
+  }
+  allGrades{
+    id
+    studentId
+    subject
+    grade
   }
 }
 ```
@@ -103,13 +109,102 @@ query {
 #### Crear un nuevo estudiante:
 
 ```graphql
-mutation {
-  createStudent(id: "1", firstName: "John", lastName: "Doe", email: "john@example.com") {
-    student {
+mutation{
+  createStudent(
+    studentId: "2",
+    firstName: "Mariana",
+    lastName: "Suarez",
+    email: "mariana@gmail.com"
+  ){
+    student{
       id
       firstName
       lastName
       email
+    }
+  }
+}
+```
+
+#### Crear una nueva nota:
+
+```graphql
+mutation{
+  createGrade(
+    gradeId: "3",
+    studentId: "1",
+    subject: "Inglés",
+    grade: 5.0
+  ){
+    grade{
+      id
+      studentId
+      subject
+      grade
+    }
+  }
+  
+}
+```
+
+#### Eliminar un estudiante
+
+```graphql
+mutation{
+  deleteStudent(studentId: "1")
+  {
+    message
+  }
+}
+```
+
+#### Eliminar una nota
+
+```graphql
+mutation{
+  deleteGrade(gradeId: "1")
+  {
+    message
+  }
+}
+```
+
+#### Actualizar información de estudiante
+
+```graphql
+mutation{
+  updateStudent(
+    studentId: "2"
+    email: "mariana@gmail.com",
+    firstName: "Mariana",
+    lastName: "Smith"
+  )
+  {
+    student
+    {
+      id
+      firstName
+      lastName
+      email
+    }
+  }
+}
+```
+
+#### Actualizar información de nota
+```graphql
+mutation {
+  updateGrade(
+    gradeId: "2",
+    studentId: "1",
+    subject: "Fisica",
+    grade: 4.5
+  ) {
+    grade {
+      id
+      studentId
+      subject
+      grade
     }
   }
 }
