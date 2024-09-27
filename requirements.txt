@@ -4,6 +4,7 @@ django
 # Integración GraphQL con Django
 graphene-django
 
+django-cors-headers
 #cython
 # Driver para conectar Python con Cassandra
 #cassandra-driver
