@@ -31,27 +31,21 @@ git clone https://github.com/MrEstebban/proyecto-django-graphql-hexagonal
 cd proyecto-django-graphql-hexagonal
 ```
 
-### 2. Crear y Activar un Entorno Virtual
+### 2. Construir la Imagen Docker
 
-```bash
-python -m venv venv
-source env/bin/activate  # En Windows: env\Scripts\activate
+Primero, asegúrate de estar en el directorio donde se encuentra tu `Dockerfile`. Luego, ejecuta el siguiente comando para construir la imagen Docker:
+
+```sh
+docker build -t proyecto-django-graphql .
 ```
 
-### 3. Instalar Dependencias
 
-Instala los paquetes requeridos utilizando el archivo `requirements.txt`:
+### 3. Ejecutar el Contenedor Docker
 
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Ejecutar el Servidor de Desarrollo
-
-Inicia el servidor de desarrollo de Django:
+Una vez que la imagen Docker se haya construido correctamente, puedes ejecutar el contenedor con el siguiente comando:
 
 ```bash
-python manage.py runserver
+docker run -p 8000:8000 proyecto-django-graphql
 ```
 
 La API estará disponible en `http://127.0.0.1:8000/graphql`.
