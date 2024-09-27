@@ -1,7 +1,7 @@
 
-# Proyecto Django con Arquitectura Hexagonal, Cassandra y GraphQL
+# Proyecto Django con Arquitectura Hexagonal, SQLite y GraphQL
 
-Este proyecto utiliza Django para construir una API que sigue la arquitectura hexagonal, utiliza Cassandra como base de datos y GraphQL como interfaz de entrada.
+Este proyecto utiliza Django para construir una API que sigue la arquitectura hexagonal, utiliza SQLite como base de datos y GraphQL como interfaz de entrada.
 
 ### Arquitectura Hexagonal (o Puertos y Adaptadores)
 
@@ -13,12 +13,11 @@ La **arquitectura hexagonal**, también conocida como **arquitectura de puertos 
 2. **Puertos:** Son interfaces que definen cómo los componentes externos (como bases de datos, APIs externas, interfaces de usuario) interactúan con la lógica de negocio. Hay dos tipos principales:
    * **Puertos de Entrada:** Para recibir datos externos y enviarlos a la lógica de negocio. Ejemplos: controladores HTTP, clientes GraphQL, CLI.
    * **Puertos de Salida:** Para enviar datos desde la lógica de negocio a componentes externos. Ejemplos: repositorios para bases de datos, APIs externas.
-3. **Adaptadores:** Implementan los puertos, traduciéndolos a tecnologías específicas. Ejemplos: un adaptador que traduce un puerto de entrada en un controlador GraphQL, o un puerto de salida en un repositorio Cassandra.
+3. **Adaptadores:** Implementan los puertos, traduciéndolos a tecnologías específicas. Ejemplos: un adaptador que traduce un puerto de entrada en un controlador GraphQL, o un puerto de salida en un repositorio SQLite.
 
 ## Requisitos Previos
 
 1. **Python 3.9+**: Asegúrate de tener Python instalado en tu sistema.
-2. **Cassandra**: Instala y configura Cassandra. Puedes seguir las [instrucciones oficiales](https://cassandra.apache.org/_/quickstart.html).
 3. **Virtualenv**: Recomendado para crear un entorno virtual aislado.
 
 ## Instalación
@@ -28,8 +27,8 @@ La **arquitectura hexagonal**, también conocida como **arquitectura de puertos 
 Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/MrEstebban/proyecto-django-arqui-hex
-cd proyecto-django-arqui-hex
+git clone https://github.com/MrEstebban/proyecto-django-graphql-hexagonal
+cd proyecto-django-graphql-hexagonal
 ```
 
 ### 2. Crear y Activar un Entorno Virtual
@@ -47,31 +46,7 @@ Instala los paquetes requeridos utilizando el archivo `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-### 4. Configurar Variables de Entorno
-
-Crea un archivo `.env` en la raíz del proyecto con la siguiente estructura:
-
-```
-SECRET_KEY=django-insecure-your-secret-key
-DEBUG=True
-DATABASE_NAME=school
-DATABASE_HOST=127.0.0.1
-DATABASE_PORT=9042
-DATABASE_USER=cassandra_user
-DATABASE_PASSWORD=cassandra_password
-```
-
-Asegúrate de actualizar los valores según tu configuración de Cassandra.
-
-### 5. Migraciones de Base de Datos
-
-Ejecuta el siguiente comando para sincronizar las tablas de Cassandra con los modelos de Django:
-
-```bash
-python manage.py sync_cassandra
-```
-
-### 6. Ejecutar el Servidor de Desarrollo
+### 4. Ejecutar el Servidor de Desarrollo
 
 Inicia el servidor de desarrollo de Django:
 
