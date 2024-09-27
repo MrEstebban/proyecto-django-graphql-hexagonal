@@ -13,6 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar el código fuente al contenedor
 COPY . .
 
+# Ejecutar las migraciones
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
 # Exponer el puerto en el que Django se ejecutará
 EXPOSE 8000
 
