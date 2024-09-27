@@ -36,7 +36,7 @@ Una vez que la imagen Docker se haya construido correctamente, puedes ejecutar e
 docker run -p 8000:8000 proyecto-django-graphql
 ```
 
-La API estará disponible en `http://127.0.0.1:8000/graphql`.
+La API estará disponible en el navegador en la dirección `http://127.0.0.1:8000/graphql`.
 
 ## Uso de la API GraphQL
 
