@@ -4,12 +4,11 @@ Define las consultas de GraphQL para listar
 '''
 import graphene
 from graphene_django import DjangoObjectType
-from core.models.student import Student
-from core.models.grade import Grade
-#from core.services.student_service import StudentService
-#from core.services.grade_service import GradeService
+from core.models import Student
+from core.models import Grade
+from core.services.student_service import StudentService
+from core.services.grade_service import GradeService
 
-# Definición de tipos para GraphQL
 class StudentType(DjangoObjectType):
     class Meta:
         model = Student
@@ -28,7 +27,18 @@ class Query(graphene.ObjectType):
     grades_by_student = graphene.List(GradeType, student_id=graphene.String(required=True))
 
     def resolve_all_students(self, info):
-        #student_service = StudentService()
-        return Student.objects.all()
-
+        student_service = StudentService()
+        return student_service.get_students()
+    
+    def resolve_all_grades(self, info):
+        grade_service = GradeService()
+        return grade_service.get_grades()
+    
+    def resolve_student_by_id(self, info, student_id):
+        student_service = StudentService()
+        return student_service.get_student(student_id)
+    
+    def resolve_grades_by_student(self, info, student_id):
+        grade_service = GradeService()
+        return grade_service.get_grades_by_student(student_id)
 
