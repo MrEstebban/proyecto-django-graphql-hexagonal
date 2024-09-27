@@ -17,8 +17,8 @@ La **arquitectura hexagonal**, también conocida como **arquitectura de puertos 
 
 ## Requisitos Previos
 
-1. **Python 3.9+**: Asegúrate de tener Python instalado en tu sistema.
-3. **Virtualenv**: Recomendado para crear un entorno virtual aislado.
+1. **Docker**: Asegúrate de tener Docker instalado en tu sistema.
+3. **Git**: Recomendado para clonar el respositorio en tu máquina.
 
 ## Instalación
 
