@@ -3,18 +3,6 @@
 
 Este proyecto utiliza Django para construir una API que sigue la arquitectura hexagonal, utiliza SQLite como base de datos y GraphQL como interfaz de entrada.
 
-### Arquitectura Hexagonal (o Puertos y Adaptadores)
-
-La **arquitectura hexagonal**, también conocida como **arquitectura de puertos y adaptadores**, es un estilo arquitectónico que promueve la separación de la lógica de negocio de una aplicación de los detalles de implementación de los componentes externos. Esto se logra mediante la definición de interfaces (puertos) y la implementación de estas interfaces en componentes específicos (adaptadores).
-
-#### ¿Cómo Funciona?
-
-1. **Dominio (Núcleo o Core):** Aquí se encuentra toda la lógica de negocio de la aplicación, sin dependencia de ningún framework, base de datos o sistema externo.
-2. **Puertos:** Son interfaces que definen cómo los componentes externos (como bases de datos, APIs externas, interfaces de usuario) interactúan con la lógica de negocio. Hay dos tipos principales:
-   * **Puertos de Entrada:** Para recibir datos externos y enviarlos a la lógica de negocio. Ejemplos: controladores HTTP, clientes GraphQL, CLI.
-   * **Puertos de Salida:** Para enviar datos desde la lógica de negocio a componentes externos. Ejemplos: repositorios para bases de datos, APIs externas.
-3. **Adaptadores:** Implementan los puertos, traduciéndolos a tecnologías específicas. Ejemplos: un adaptador que traduce un puerto de entrada en un controlador GraphQL, o un puerto de salida en un repositorio SQLite.
-
 ## Requisitos Previos
 
 1. **Docker**: Asegúrate de tener Docker instalado en tu sistema.
